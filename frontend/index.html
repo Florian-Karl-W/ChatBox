@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <title>Chatbot</title>
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <h1>Chatbot IA</h1>
+      <div class="header-actions">
+        <button id="clear-btn" title="Réinitialiser la session">Nouvelle session</button>
+      </div>
+    </header>
+
+    <main id="chat" aria-live="polite"></main>
+
+    <form id="composer" autocomplete="off">
+      <input id="prompt" name="prompt" type="text" placeholder="Écrivez votre message…" required />
+      <button id="send" type="submit">Envoyer</button>
+    </form>
+  </div>
+
+  <template id="msg-template">
+    <div class="msg">
+      <div class="bubble"></div>
+      <div class="meta">
+        <span class="role"></span>
+        <button class="copy" title="Copier la réponse">Copier</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>
